@@ -112,7 +112,7 @@ const FAQ = () => {
         <h2 className="uppercase text-lg font-bold text-gray-500">
           still have questions? we're happy yo help!
         </h2>
-        <Button className="text-gray-400 hover:bg-gray-400 hover:text-white">
+        <Button className="text-gray-700 hover:bg-gray-400 hover:text-white">
           <Link to="/contact-us">contact us</Link>
         </Button>
       </div>

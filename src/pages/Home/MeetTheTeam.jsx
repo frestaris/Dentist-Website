@@ -27,7 +27,7 @@ const MeetTheTeam = () => {
         {/* Hero Content */}
         <div className="flex flex-col items-center justify-center h-full text-white text-center px-4 md:px-0 relative z-10">
           <h1 className="text-6xl md:text-8xl font-bold drop-shadow-lg mb-5">
-            Top-notch dentistry, from Seattle's top dentists.
+            Top-notch dentistry, from our top dentists.
           </h1>
           <Button>meet the team</Button>
         </div>
