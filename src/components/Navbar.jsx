@@ -55,7 +55,7 @@ const Navbar = () => {
 
         {/* Logo */}
         <div className="text-lg font-bold text-gray-800 mx-auto">
-          Medical <span className="text-primary">Center</span>
+          Dental <span className="text-primary">Center</span>
         </div>
 
         {/* Right Navigation Links  */}

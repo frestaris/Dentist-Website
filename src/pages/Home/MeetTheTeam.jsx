@@ -1,3 +1,5 @@
+import Button from "../../components/Button";
+
 const MeetTheTeam = () => {
   return (
     <div className="overflow-hidden px-4">
@@ -27,9 +29,7 @@ const MeetTheTeam = () => {
           <h1 className="text-6xl md:text-8xl font-bold drop-shadow-lg mb-5">
             Top-notch dentistry, from Seattle's top dentists.
           </h1>
-          <button className="bg-transparent font-bold border-2 my-10 py-5 px-10 rounded-full text-white text-sm hover:bg-white hover:text-black transition-colors">
-            MEET THE TEAM
-          </button>
+          <Button>meet the team</Button>
         </div>
       </div>
     </div>

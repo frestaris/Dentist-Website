@@ -4,11 +4,11 @@ const Footer = () => {
   return (
     <footer className="bg-gray-100 text-gray-700 p-10">
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-        {/* About Medical Center */}
+        {/* About Dental Center */}
         <div>
-          <h3 className="text-xl font-semibold mb-3">About Medical Center</h3>
+          <h3 className="text-xl font-semibold mb-3">About Dental Center</h3>
           <p className="text-md">
-            Our Medical Center is dedicated to providing exceptional healthcare
+            Our Dental Center is dedicated to providing exceptional healthcare
             services, utilizing state-of-the-art technology and compassionate
             care for every patient.
           </p>
@@ -43,6 +43,11 @@ const Footer = () => {
                 About Us
               </Link>
             </li>
+            <li>
+              <Link to="/faq" className="hover:text-primary">
+                FAQ
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -51,13 +56,13 @@ const Footer = () => {
           <h3 className="text-xl font-semibold mb-3">Contact Us</h3>
           <ul className="space-y-2 text-md">
             <li>
-              <strong>Address:</strong> 123 Medical Lane, Health City, HC 12345
+              <strong>Address:</strong> 123 Dental Lane, Health City, HC 12345
             </li>
             <li>
               <strong>Phone:</strong> +1 234 567 890
             </li>
             <li>
-              <strong>Email:</strong> info@medicalcenter.com
+              <strong>Email:</strong> info@dentalcenter.com
             </li>
           </ul>
         </div>

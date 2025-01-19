@@ -42,7 +42,7 @@ const Sponsors = () => {
           We work with the best, for you.
         </h2>
         <p className="text-lg text-gray-500">
-          At Dental Care Seattle, our doctors are recognized by leading industry
+          At Dental Center, our doctors are recognized by leading industry
           organizations, and work with the best clinical partners, labs, and
           safety technology to provide you top-notch dental care.
         </p>
