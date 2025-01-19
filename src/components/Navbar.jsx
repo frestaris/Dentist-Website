@@ -40,16 +40,55 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink
-              to="/our-team"
-              className={({ isActive }) =>
-                isActive
-                  ? activeClassName
-                  : "hover:text-primary transition duration-200"
-              }
-            >
-              our team
-            </NavLink>
+            <div className="relative group">
+              <NavLink
+                to="/our-team"
+                className={({ isActive }) =>
+                  isActive
+                    ? activeClassName
+                    : "hover:text-primary transition duration-200"
+                }
+              >
+                our team
+              </NavLink>
+              {/* Dropdown Content */}
+              <div className="absolute left-0 hidden group-hover:block bg-gray-100 shadow-lg p-4 w-40">
+                <ul>
+                  <li>
+                    <NavLink
+                      to="/our-team"
+                      className="block p-1 text-gray-700 hover:text-primary  text-sm"
+                    >
+                      overview
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/dentist-dr-john-doe"
+                      className="block p-1 text-gray-700 hover:text-primary  text-sm"
+                    >
+                      dr. john doe
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/dentist-dr-jane-smith"
+                      className="block p-1 text-gray-700 hover:text-primary  text-sm"
+                    >
+                      dr. jane smith
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/dentist-dr-alice-johnson"
+                      className="block p-1 text-gray-700 hover:text-primary  text-sm"
+                    >
+                      dr. alice johnson
+                    </NavLink>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </li>
         </ul>
 
@@ -73,16 +112,56 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                isActive
-                  ? activeClassName
-                  : "hover:text-primary transition duration-200"
-              }
-            >
-              about us
-            </NavLink>
+            <div className="relative group">
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-primary font-bold"
+                    : "hover:text-primary transition duration-200"
+                }
+              >
+                about us
+              </NavLink>
+
+              {/* Dropdown Content */}
+              <div className="absolute left-0 hidden group-hover:block bg-gray-100 shadow-lg p-4 w-36">
+                <ul>
+                  <li>
+                    <NavLink
+                      to="/office"
+                      className="block p-1 text-gray-700 hover:text-primary  text-sm"
+                    >
+                      office tour
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/reviews"
+                      className="block p-1 text-gray-700 hover:text-primary  text-sm"
+                    >
+                      reviews
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/safety"
+                      className="block p-1 text-gray-700 hover:text-primary  text-sm"
+                    >
+                      safety
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/faq"
+                      className="block p-1 text-gray-700 hover:text-primary  text-sm"
+                    >
+                      faq
+                    </NavLink>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </li>
         </ul>
 
