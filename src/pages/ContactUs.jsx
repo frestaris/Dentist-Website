@@ -288,7 +288,7 @@ const ContactUs = () => {
             </div>
 
             {/* Submit Button */}
-            <Button className="text-gray-700 hover:bg-gray-400 hover:text-white">
+            <Button className="text-gray-700 hover:bg-gray-500 hover:text-white">
               Submit
             </Button>
           </form>

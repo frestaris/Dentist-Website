@@ -4,7 +4,7 @@ import HomeLayout from "./pages/Home/HomeLayout";
 import Services from "./pages/Services";
 import OurTeam from "./pages/OurTeam";
 import ContactUs from "./pages/ContactUs";
-import About from "./pages/About";
+import Office from "./pages/Office";
 import Footer from "./components/Footer";
 import FAQ from "./pages/FAQ";
 
@@ -17,7 +17,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/our-team" element={<OurTeam />} />
         <Route path="/contact-us" element={<ContactUs />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/office" element={<Office />} />
         <Route path="/faq" element={<FAQ />} />
       </Routes>
       <Footer />

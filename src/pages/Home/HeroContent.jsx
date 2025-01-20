@@ -13,7 +13,7 @@ const HeroContent = () => {
             <div className="w-full md:w-1/3 mb-4 md:mb-0">
               <hr className="border-t-2 border-gray-300" />
               <div className="text-start mt-4">
-                <h3 className="text-xl font-semibold">01.</h3>
+                <h3 className="text-xl font-semibold text-gray-500">01.</h3>
                 <p className="text-md mt-2 text-gray-500">
                   <strong>Tight Schedule? No worries!</strong>
                   <br />
@@ -29,11 +29,11 @@ const HeroContent = () => {
             <div className="w-full md:w-1/3 mb-4 md:mb-0">
               <hr className="border-t-2 border-gray-300" />
               <div className="text-start mt-4">
-                <h3 className="text-xl font-semibold">02.</h3>
+                <h3 className="text-xl font-semibold text-gray-500">02.</h3>
                 <p className="text-md mt-2 text-gray-500">
                   <strong>Committed to Safety</strong>
                   <br />
-                  We’re prioritizing your{" "}
+                  We're prioritizing your{" "}
                   <a href="/safety" className="text-primary ">
                     safety
                   </a>{" "}
@@ -45,7 +45,7 @@ const HeroContent = () => {
             <div className="w-full md:w-1/3 mb-4 md:mb-0">
               <hr className="border-t-2 border-gray-300" />
               <div className="text-start mt-4">
-                <h3 className="text-xl font-semibold">03.</h3>
+                <h3 className="text-xl font-semibold text-gray-500">03.</h3>
                 <p className="text-md mt-2 text-gray-500">
                   <strong>Smiles Without Stress</strong>
                   <br />
