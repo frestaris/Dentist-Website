@@ -63,7 +63,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className="w-auto mx-5 p-6">
+    <div className="w-auto mx-2 p-6">
       <h2 className="text-6xl font-bold mb-8 text-gray-700">FAQ</h2>
       <div className="mb-24">
         {faqData.map((item, index) => (
@@ -112,7 +112,7 @@ const FAQ = () => {
         <h2 className="uppercase text-lg font-bold text-gray-500">
           still have questions? we're happy yo help!
         </h2>
-        <Button className="text-gray-700 hover:bg-gray-500 hover:text-white">
+        <Button className="text-gray-700 hover:bg-gray-400 hover:text-white">
           <Link to="/contact-us">contact us</Link>
         </Button>
       </div>

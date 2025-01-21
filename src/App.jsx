@@ -7,6 +7,7 @@ import ContactUs from "./pages/ContactUs";
 import Office from "./pages/Office";
 import Footer from "./components/Footer";
 import FAQ from "./pages/FAQ";
+import Reviews from "./pages/Reviews";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/office" element={<Office />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/reviews" element={<Reviews />} />
       </Routes>
       <Footer />
     </BrowserRouter>

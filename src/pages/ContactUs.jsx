@@ -77,7 +77,7 @@ const ContactUs = () => {
         </p>
         <div className="space-y-6">
           <h3 className="text-md text-gray-600 font-semibold mb-4 uppercase">
-            Request an appointment
+            Get in touch
           </h3>
           <form onSubmit={handleSubmit} className="space-y-2">
             {/* Name */}
@@ -288,7 +288,7 @@ const ContactUs = () => {
             </div>
 
             {/* Submit Button */}
-            <Button className="text-gray-700 hover:bg-gray-500 hover:text-white">
+            <Button className="text-gray-700 hover:bg-gray-400 hover:text-white">
               Submit
             </Button>
           </form>
