@@ -3,34 +3,29 @@ import Marquee from "react-fast-marquee";
 const Sponsors = () => {
   const sponsors = [
     {
-      src: "https://www.dayhospitalsaustralia.net.au/wp-content/uploads/2024/04/LifeHealthcare_No_tag_Full_colour_Large-2.png",
-      alt: "Sponsor 1",
-      url: "#",
-    },
-    {
-      src: "https://cdn.prod.website-files.com/5a6e91077bd20a0001852e86/60df7c7743b07d72b8303141_UnitedHealthcare%20Dental.png",
-      alt: "Sponsor 2",
-      url: "#",
-    },
-    {
-      src: "https://aapd.org.au/wp-content/uploads/2022/11/JS-Medical-Dental-Finance_logo2.png",
-      alt: "Sponsor 3",
-      url: "#",
-    },
-    {
       src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9i59cIR4IexrlHJEsuNuATpf--ArXxbbIzw&s",
-      alt: "Sponsor 4",
-      url: "#",
+      alt: "Sponsor 1",
+    },
+    {
+      src: "https://www.dayhospitalsaustralia.net.au/wp-content/uploads/2024/04/LifeHealthcare_No_tag_Full_colour_Large-2.png",
+      alt: "Sponsor 2",
     },
     {
       src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkBpMFSSx3oVyqvgwBuVDR-oC8Fb8AdHPJRA&s",
-      alt: "Sponsor 5",
-      url: "#",
+      alt: "Sponsor 3",
     },
+    {
+      src: "https://cdn.prod.website-files.com/5a6e91077bd20a0001852e86/60df7c7743b07d72b8303141_UnitedHealthcare%20Dental.png",
+      alt: "Sponsor 4",
+    },
+    {
+      src: "https://aapd.org.au/wp-content/uploads/2022/11/JS-Medical-Dental-Finance_logo2.png",
+      alt: "Sponsor 5",
+    },
+
     {
       src: "https://www.asid.org.au/content-assets/public/eyJhbGciOiJIUzI1NiJ9.eyJvYmplY3Rfa2V5IjoiMjgycWEweWJzcHBtbHNjNzE4NHo1a2FlMzd3byIsImRvbWFpbiI6Ind3dy5hc2lkLm9yZy5hdSJ9.GdT7muuR2DPuYfqkEom71FAfy1a-ZAR7z98712oYJtE",
       alt: "Sponsor 6",
-      url: "#",
     },
   ];
 

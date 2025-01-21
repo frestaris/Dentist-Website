@@ -24,8 +24,8 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link to="/services" className="hover:text-primary">
-                Services
+              <Link to="/book-online" className="hover:text-primary">
+                Book Online
               </Link>
             </li>
             <li>
@@ -39,8 +39,8 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link to="/about" className="hover:text-primary">
-                About Us
+              <Link to="/office" className="hover:text-primary">
+                Office Tour
               </Link>
             </li>
             <li>
