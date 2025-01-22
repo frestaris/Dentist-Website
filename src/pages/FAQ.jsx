@@ -63,7 +63,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className="w-auto mx-2 p-6">
+    <div className="md:w-3/4 w-full mx-auto p-6">
       <h2 className="text-6xl font-bold mb-8 text-gray-700">FAQ</h2>
       <div className="mb-24">
         {faqData.map((item, index) => (

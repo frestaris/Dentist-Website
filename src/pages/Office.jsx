@@ -1,8 +1,8 @@
 const Office = () => {
   return (
-    <>
+    <div className="mx-auto max-w-6xl">
       {/* TOP SECTION */}
-      <div className="flex flex-col md:flex-row gap-12 max-w-6xl mb-4 mx-4">
+      <div className="flex flex-col md:flex-row gap-12 max-w-6xl mb-4 mt-8 mx-4">
         <div className="flex-1">
           <h2 className="text-3xl font-semibold text-gray-600 mb-6">
             Bright, Modern, and Light-Filled
@@ -129,7 +129,7 @@ const Office = () => {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

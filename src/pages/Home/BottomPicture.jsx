@@ -16,7 +16,7 @@ const BottomPicture = () => {
           <h1 className="text-6xl md:text-8xl font-bold drop-shadow-lg mb-5">
             Let's get started.
           </h1>
-          <Button>request an appointment</Button>
+          <Button className="hover:bg-white">request an appointment</Button>
         </div>
       </div>
     </div>

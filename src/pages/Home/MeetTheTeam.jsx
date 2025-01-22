@@ -29,7 +29,7 @@ const MeetTheTeam = () => {
           <h1 className="text-6xl md:text-8xl font-bold drop-shadow-lg mb-5">
             Top-notch dentistry, from our top dentists.
           </h1>
-          <Button>meet the team</Button>
+          <Button className="hover:bg-white">meet the team</Button>
         </div>
       </div>
     </div>

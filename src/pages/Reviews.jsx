@@ -74,7 +74,9 @@ const Reviews = () => {
           ></div>
           {/* HeroPicture Content */}
           <div className="flex flex-col items-center justify-center h-full text-white text-center px-4 md:px-0 relative z-10">
-            <Button onClick={openModal}>Leave a review</Button>
+            <Button className="hover:bg-white" onClick={openModal}>
+              Leave a review
+            </Button>
           </div>
         </div>
       </div>

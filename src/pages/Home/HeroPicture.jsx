@@ -28,7 +28,7 @@ const HeroPicture = () => {
           <h1 className="text-6xl md:text-8xl font-bold drop-shadow-lg mb-5">
             Say everything <br /> with your smile.
           </h1>
-          <Button>request appointment</Button>
+          <Button className="hover:bg-white">request appointment</Button>
         </div>
       </div>
     </div>

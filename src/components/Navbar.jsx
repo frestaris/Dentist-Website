@@ -44,22 +44,15 @@ const Navbar = () => {
             </NavLink>
           </li>
           <div className="relative group">
-            <NavLink
-              to="/our-team"
-              className={({ isActive }) =>
-                isActive
-                  ? activeClassName
-                  : "hover:text-primary transition duration-200"
-              }
-            >
+            <div className="hover:text-primary transition duration-200 cursor-pointer">
               our team
-            </NavLink>
+            </div>
             {/* Dropdown Content */}
             <div className="absolute left-0 hidden group-hover:block bg-gray-100 shadow-lg p-4 w-40">
               <ul>
                 <li>
                   <NavLink
-                    to="/our-team"
+                    to="/overview"
                     className="block p-1 text-gray-700 hover:text-primary  text-sm"
                   >
                     overview
@@ -351,7 +344,7 @@ const Navbar = () => {
             <ul className="flex flex-col space-y-4 mt-16 px-6 text-gray-600 font-medium">
               <li>
                 <NavLink
-                  to="/our-team"
+                  to="/overview"
                   className="hover:text-primary transition duration-200"
                   onClick={closeMenu}
                 >
