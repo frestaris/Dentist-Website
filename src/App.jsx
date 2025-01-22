@@ -9,6 +9,8 @@ import FAQ from "./pages/FAQ";
 import Reviews from "./pages/Reviews";
 import Safety from "./pages/Safety";
 import Overview from "./pages/Overview";
+import DoctorProfile from "./components/DoctorProfile";
+import { teamMembers } from "./utils/data";
 
 function App() {
   return (
@@ -23,6 +25,10 @@ function App() {
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/safety" element={<Safety />} />
         <Route path="/overview" element={<Overview />} />
+        <Route
+          path="/dentist/:name"
+          element={<DoctorProfile doctors={teamMembers} />}
+        />
       </Routes>
       <Footer />
     </BrowserRouter>

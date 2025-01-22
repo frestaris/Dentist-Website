@@ -60,7 +60,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <NavLink
-                    to="/dentist-dr-john-doe"
+                    to="/dentist/john-doe"
                     className="block p-1 text-gray-700 hover:text-primary  text-sm"
                   >
                     dr. john doe
@@ -68,7 +68,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <NavLink
-                    to="/dentist-dr-jane-smith"
+                    to="/dentist/jane-smith"
                     className="block p-1 text-gray-700 hover:text-primary  text-sm"
                   >
                     dr. jane smith
@@ -76,7 +76,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <NavLink
-                    to="/dentist-dr-alice-johnson"
+                    to="/dentist/alice-johnson"
                     className="block p-1 text-gray-700 hover:text-primary  text-sm"
                   >
                     dr. alice johnson
@@ -353,7 +353,7 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
-                  to="/dentist-dr-john-doe"
+                  to="/dentist/john-doe"
                   className="hover:text-primary transition duration-200"
                   onClick={closeMenu}
                 >
@@ -362,7 +362,7 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
-                  to="/dentist-dr-jane-smith"
+                  to="/dentist/jane-smith"
                   className="hover:text-primary transition duration-200"
                   onClick={closeMenu}
                 >
@@ -371,7 +371,7 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
-                  to="/dentist-dr-alice-johnson"
+                  to="/dentist/alice-johnson"
                   className="hover:text-primary transition duration-200"
                   onClick={closeMenu}
                 >
