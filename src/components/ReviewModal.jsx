@@ -8,6 +8,7 @@ const ReviewModal = ({ setReviews, closeModal }) => {
     author: "",
     rating: 0,
   });
+  const [ratingError, setRatingError] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -16,17 +17,22 @@ const ReviewModal = ({ setReviews, closeModal }) => {
 
   const handleRatingChange = (rating) => {
     setFormData((prev) => ({ ...prev, rating }));
+    setRatingError(false);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.text && formData.author && formData.rating > 0) {
       const newReview = {
-        id: Date.now(), // Unique ID
+        id: Date.now(),
         ...formData,
       };
       setReviews((prevReviews) => [newReview, ...prevReviews]);
-      closeModal(); // Close modal after submission
+      closeModal();
+    } else {
+      if (formData.rating === 0) {
+        setRatingError(true);
+      }
     }
   };
 
@@ -61,6 +67,9 @@ const ReviewModal = ({ setReviews, closeModal }) => {
             />
           ))}
         </div>
+        {ratingError && (
+          <p className="text-red-500 text-xs mt-2">Please select a rating.</p>
+        )}
       </div>
       <label htmlFor="text" className="block text-sm font-medium mb-2">
         Review

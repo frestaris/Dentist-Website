@@ -19,11 +19,16 @@ export function addLineBreakAfterWords(text, wordsPerSection, gapSize) {
 
 export const getDates = (startDate, numberOfDays) => {
   const dates = [];
+  let currentDate = new Date(startDate);
+
   for (let i = 0; i < numberOfDays; i++) {
-    const date = new Date(startDate);
-    date.setDate(date.getDate() + i);
-    const options = { weekday: "short", month: "long", day: "numeric" };
-    dates.push(date.toLocaleDateString("en-US", options));
+    while (currentDate.getDay() === 6 || currentDate.getDay() === 0) {
+      currentDate.setDate(currentDate.getDate() + 1);
+    }
+
+    dates.push(new Date(currentDate));
+    currentDate.setDate(currentDate.getDate() + 1);
   }
+
   return dates;
 };

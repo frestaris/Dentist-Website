@@ -12,11 +12,17 @@ const BookOnline = () => {
 
   const dates = getDates(selectedDate, visibleDates);
 
-  const handleTimeSelect = (time) => {
-    if (selectedTime === time) {
+  const handleTimeSelect = (time, date) => {
+    const formattedTime = `${date.toLocaleDateString("en-US", {
+      weekday: "short",
+      month: "long",
+      day: "numeric",
+    })} ${time}`;
+
+    if (selectedTime === formattedTime) {
       setSelectedTime(null);
     } else {
-      setSelectedTime(time);
+      setSelectedTime(formattedTime);
     }
   };
 
@@ -67,12 +73,12 @@ const BookOnline = () => {
           showNeighboringMonth={false}
           prevLabel={
             <span className="text-primary px-4 text-2xl flex items-center">
-              ‹
+              {"<"}
             </span>
           }
           nextLabel={
             <span className="text-primary px-4 text-2xl flex items-center">
-              ›
+              {">"}
             </span>
           }
         />
@@ -99,22 +105,35 @@ const BookOnline = () => {
         {dates.map((date, index) => (
           <div key={index} className="mt-6">
             <div className="font-semibold text-gray-800">
-              <span>{date}</span>
+              <span>
+                {`${date.toLocaleDateString("en-US", {
+                  month: "long",
+                  day: "numeric",
+                })}, ${date.toLocaleDateString("en-US", { weekday: "short" })}`}
+              </span>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4 mt-4">
-              {timeSlots.map((time, timeIndex) => (
-                <button
-                  key={timeIndex}
-                  className={`w-full py-2 text-sm font-medium border rounded-md transition duration-200 ${
-                    selectedTime === `${date} ${time}`
-                      ? "bg-primary text-white border-primary"
-                      : "bg-white text-gray-700 border-gray-300 hover:bg-blue-50 hover:border-primary hover:text-primary hover:scale-110"
-                  }`}
-                  onClick={() => handleTimeSelect(`${date} ${time}`)}
-                >
-                  {time}
-                </button>
-              ))}
+              {timeSlots.map((time, timeIndex) => {
+                const formattedTime = `${date.toLocaleDateString("en-US", {
+                  weekday: "short",
+                  month: "long",
+                  day: "numeric",
+                })} ${time}`;
+
+                return (
+                  <button
+                    key={timeIndex}
+                    className={`w-full py-2 text-sm font-medium border rounded-md transition duration-200 ${
+                      selectedTime === formattedTime
+                        ? "bg-primary text-white scale-110 border-primary"
+                        : "bg-white text-gray-700 border-gray-300 hover:bg-blue-50 hover:border-primary hover:text-primary hover:scale-110"
+                    }`}
+                    onClick={() => handleTimeSelect(time, date)}
+                  >
+                    {time}
+                  </button>
+                );
+              })}
             </div>
           </div>
         ))}

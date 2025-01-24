@@ -150,9 +150,11 @@ const Safety = () => {
           nesciunt eum ea officiis iste placeat, optio saepe, magni natus, aut
           quia. Officiis error reiciendis magni dolorem aut illo, in odit.
         </p>
-        <Button className="text-gray-700 hover:bg-gray-400 hover:text-white">
-          <Link to="/contact-us">contact us</Link>
-        </Button>
+        <Link to="/contact-us">
+          <Button className="text-gray-700 hover:bg-gray-400 hover:text-white">
+            contact us
+          </Button>
+        </Link>
       </section>
     </div>
   );

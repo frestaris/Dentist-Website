@@ -11,10 +11,12 @@ import Safety from "./pages/Safety";
 import Overview from "./pages/Overview";
 import DoctorProfile from "./components/DoctorProfile";
 import { teamMembers } from "./utils/data";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<HomeLayout />} />

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 
 const BottomPicture = () => {
@@ -16,7 +17,9 @@ const BottomPicture = () => {
           <h1 className="text-6xl md:text-8xl font-bold drop-shadow-lg mb-5">
             Let's get started.
           </h1>
-          <Button className="hover:bg-white">request an appointment</Button>
+          <Link to="/contact-us">
+            <Button className="hover:bg-white">contact us</Button>
+          </Link>
         </div>
       </div>
     </div>

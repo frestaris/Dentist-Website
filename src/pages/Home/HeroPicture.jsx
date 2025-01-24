@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 
 const HeroPicture = () => {
@@ -28,7 +29,9 @@ const HeroPicture = () => {
           <h1 className="text-6xl md:text-8xl font-bold drop-shadow-lg mb-5">
             Say everything <br /> with your smile.
           </h1>
-          <Button className="hover:bg-white">request appointment</Button>
+          <Link to="/book-online">
+            <Button className="hover:bg-white">book online</Button>
+          </Link>
         </div>
       </div>
     </div>
