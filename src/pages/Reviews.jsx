@@ -31,7 +31,6 @@ const Reviews = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
-    console.log("Opening modal...");
     setIsModalOpen(true);
   };
   const closeModal = () => setIsModalOpen(false);

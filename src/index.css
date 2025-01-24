@@ -5,3 +5,29 @@
 body {
   font-family: "Karla", sans-serif;
 }
+
+/* CALENDAR CSS */
+.react-calendar__month-view__weekdays abbr {
+  text-decoration: none;
+  cursor: default;
+}
+
+.react-calendar__navigation__label {
+  pointer-events: none;
+  cursor: default;
+}
+
+.custom-calendar .react-calendar__month-view__weekdays {
+  border-bottom: 1px solid;
+  margin: 1rem 0;
+}
+.custom-calendar .react-calendar__tile {
+  font-size: 1.25rem;
+  width: 3rem;
+  height: 3rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.custom-calendar .react-calendar__tile:enabled:hover {
+  transform: scale(1.2);
+}

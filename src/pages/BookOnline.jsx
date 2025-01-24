@@ -1,7 +1,132 @@
-import React from "react";
+import { useState } from "react";
+import { timeSlots } from "../utils/data";
+import { getDates } from "../utils/functions";
+import { RiArrowDownSLine } from "react-icons/ri";
+import Calendar from "react-calendar";
+import Button from "../components/Button";
 
 const BookOnline = () => {
-  return <div>BookOnline</div>;
+  const [selectedTime, setSelectedTime] = useState(null);
+  const [visibleDates, setVisibleDates] = useState(2);
+  const [selectedDate, setSelectedDate] = useState(new Date());
+
+  const dates = getDates(selectedDate, visibleDates);
+
+  const handleTimeSelect = (time) => {
+    if (selectedTime === time) {
+      setSelectedTime(null);
+    } else {
+      setSelectedTime(time);
+    }
+  };
+
+  const loadMoreDates = () => {
+    setVisibleDates((prevCount) => prevCount + 3);
+  };
+
+  const handleDateChange = (newDate) => {
+    setSelectedDate(newDate);
+    setVisibleDates(1);
+  };
+
+  const tileDisabled = ({ date }) => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    return date < today || date.getDay() === 0 || date.getDay() === 6;
+  };
+
+  const tileClassName = ({ date }) => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    if (date.getTime() === today.getTime()) {
+      return "text-red-500";
+    }
+    if (date.getTime() === selectedDate.getTime()) {
+      return "text-primary scale-115 font-bold";
+    }
+    if (date < today || date.getDay() === 0 || date.getDay() === 6) {
+      return "text-gray-400";
+    }
+
+    return null;
+  };
+
+  return (
+    <div className="flex flex-col md:flex-row justify-between w-full my-8 p-6 border border-gray-300 rounded-lg bg-gray-50">
+      {/* Left side: Calendar */}
+      <div className="md:w-1/3 w-full text-center">
+        <Calendar
+          prev2Label={null}
+          next2Label={null}
+          onChange={handleDateChange}
+          value={selectedDate}
+          tileDisabled={tileDisabled}
+          tileClassName={tileClassName}
+          className="border rounded-lg shadow-lg py-4 custom-calendar"
+          showNeighboringMonth={false}
+          prevLabel={
+            <span className="text-primary px-4 text-2xl flex items-center">
+              ‹
+            </span>
+          }
+          nextLabel={
+            <span className="text-primary px-4 text-2xl flex items-center">
+              ›
+            </span>
+          }
+        />
+
+        {selectedTime && (
+          <div className="mt-6 text-center">
+            <p className="text-gray-600">You have selected:</p>
+            <strong className="text-lg text-blue-500">{selectedTime}</strong>
+            <div>
+              <Button className="w-auto px-6 py-2 text-gray-700 hover:bg-gray-400 hover:text-white">
+                Book appointment
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Right side: Appointment booking */}
+      <div className="md:w-2/3 w-full md:ml-8 m-0 mt-8 md:mt-0">
+        <h2 className="text-xl font-semibold text-gray-700 mb-4">
+          Book an Appointment
+        </h2>
+        <hr />
+        {dates.map((date, index) => (
+          <div key={index} className="mt-6">
+            <div className="font-semibold text-gray-800">
+              <span>{date}</span>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4 mt-4">
+              {timeSlots.map((time, timeIndex) => (
+                <button
+                  key={timeIndex}
+                  className={`w-full py-2 text-sm font-medium border rounded-md transition duration-200 ${
+                    selectedTime === `${date} ${time}`
+                      ? "bg-primary text-white border-primary"
+                      : "bg-white text-gray-700 border-gray-300 hover:bg-blue-50 hover:border-primary hover:text-primary hover:scale-110"
+                  }`}
+                  onClick={() => handleTimeSelect(`${date} ${time}`)}
+                >
+                  {time}
+                </button>
+              ))}
+            </div>
+          </div>
+        ))}
+
+        <div className="flex justify-center items-center mt-8 font-bold text-primary">
+          <button onClick={loadMoreDates} className="flex items-center">
+            More <RiArrowDownSLine className="ml-2 text-2xl" />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default BookOnline;

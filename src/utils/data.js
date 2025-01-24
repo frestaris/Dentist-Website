@@ -74,3 +74,21 @@ export const faqData = [
       "There are several options to straighten your teeth without traditional metal braces. One popular option is Invisalign, which uses clear plastic aligners that gradually shift your teeth into place. These aligners are custom-made for your mouth and are removable, making them more comfortable and convenient than traditional braces. Consult with our orthodontist to determine if you are a candidate for Invisalign or other clear aligners.",
   },
 ];
+
+export const timeSlots = [
+  "07:00 AM",
+  "07:30 AM",
+  "08:00 AM",
+  "08:30 AM",
+  "09:00 AM",
+  "09:30 AM",
+  "10:00 AM",
+  "10:30 AM",
+  "11:00 AM",
+  "11:30 AM",
+  "12:00 PM",
+  "12:30 PM",
+  "01:00 PM",
+  "01:30 PM",
+  "02:00 PM",
+];
