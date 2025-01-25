@@ -4,7 +4,7 @@ import { getDates } from "../utils/functions";
 import { RiArrowDownSLine } from "react-icons/ri";
 import Calendar from "react-calendar";
 import Button from "../components/Button";
-import ReviewBookingModal from "../components/ReviewBookingModal"; // Import the modal component
+import ReviewBookingModal from "../components/ReviewBookingModal";
 import Swal from "sweetalert2";
 
 const BookOnline = () => {
@@ -62,7 +62,7 @@ const BookOnline = () => {
     return null;
   };
 
-  const handleBookAppointment = () => {
+  const handleBookAppointment = async () => {
     if (name.length < 3) {
       Swal.fire({
         icon: "error",
@@ -74,14 +74,44 @@ const BookOnline = () => {
 
     setModalOpen(false);
 
-    Swal.fire({
-      icon: "success",
-      title: "Review added Successfully!",
-      text: `Appointment booked for ${name} at ${selectedTime}`,
-      showConfirmButton: true,
-    });
-    setName("");
-    setSelectedTime(null);
+    const bookingData = {
+      name,
+      selectedTime,
+      date: selectedDate.toISOString(),
+    };
+
+    try {
+      const response = await fetch(
+        "http://localhost:5000/booking/add-booking",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(bookingData),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to book the appointment.");
+      }
+
+      Swal.fire({
+        icon: "success",
+        title: "Appointment Booked Successfully!",
+        text: `Appointment booked for ${name} at ${selectedTime}`,
+        showConfirmButton: true,
+      });
+
+      setName("");
+      setSelectedTime(null);
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Booking Failed",
+        text: `There was an issue booking your appointment. Please try again. Error: ${error.message}`,
+      });
+    }
   };
 
   return (
