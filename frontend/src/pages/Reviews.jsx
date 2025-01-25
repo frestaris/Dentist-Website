@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -7,27 +7,7 @@ import Button from "../components/Button";
 import ReviewModal from "../components/ReviewModal";
 
 const Reviews = () => {
-  const [reviews, setReviews] = useState([
-    {
-      id: 1,
-      text: "This is an amazing product! Highly recommended!",
-      author: "John",
-      rating: 4.5,
-    },
-    {
-      id: 2,
-      text: "I love using this service. It's made my life so much easier.",
-      author: "Jane",
-      rating: 5,
-    },
-    {
-      id: 3,
-      text: "Great experience. The quality is top-notch.",
-      author: "George",
-      rating: 4,
-    },
-  ]);
-
+  const [reviews, setReviews] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -44,7 +24,24 @@ const Reviews = () => {
     verticalSwiping: false,
     draggable: false,
     swipeable: false,
+    pauseOnHover: false,
   };
+
+  useEffect(() => {
+    const getReviews = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost:5000/review/get-reviews"
+        );
+        const data = await response.json();
+        setReviews(data);
+      } catch (error) {
+        console.error("Error fetching reviews:", error);
+      }
+    };
+
+    getReviews();
+  }, []);
 
   return (
     <div className="mx-auto overflow-hidden py-8">
@@ -83,8 +80,8 @@ const Reviews = () => {
       {/* Slider */}
       <div className="my-8 h-[200px]">
         <Slider {...settings}>
-          {reviews.map((review) => (
-            <div key={review.id}>
+          {reviews.map((review, index) => (
+            <div key={review.id || index}>
               <div className="text-center mt-8">
                 <p className="text-lg text-gray-600 font-semibold">
                   - {review.author}
