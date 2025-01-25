@@ -4,11 +4,15 @@ import { getDates } from "../utils/functions";
 import { RiArrowDownSLine } from "react-icons/ri";
 import Calendar from "react-calendar";
 import Button from "../components/Button";
+import ReviewBookingModal from "../components/ReviewBookingModal"; // Import the modal component
+import Swal from "sweetalert2";
 
 const BookOnline = () => {
   const [selectedTime, setSelectedTime] = useState(null);
   const [visibleDates, setVisibleDates] = useState(2);
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const [modalOpen, setModalOpen] = useState(false);
+  const [name, setName] = useState("");
 
   const dates = getDates(selectedDate, visibleDates);
 
@@ -58,6 +62,28 @@ const BookOnline = () => {
     return null;
   };
 
+  const handleBookAppointment = () => {
+    if (name.length < 3) {
+      Swal.fire({
+        icon: "error",
+        title: "Invalid Name",
+        text: "Name must be at least 3 characters long.",
+      });
+      return;
+    }
+
+    setModalOpen(false);
+
+    Swal.fire({
+      icon: "success",
+      title: "Review added Successfully!",
+      text: `Appointment booked for ${name} at ${selectedTime}`,
+      showConfirmButton: true,
+    });
+    setName("");
+    setSelectedTime(null);
+  };
+
   return (
     <div className="flex flex-col md:flex-row justify-between w-full my-8 p-6 border border-gray-300 rounded-lg bg-gray-50">
       {/* Left side: Calendar */}
@@ -82,13 +108,15 @@ const BookOnline = () => {
             </span>
           }
         />
-
         {selectedTime && (
           <div className="mt-6 text-center">
             <p className="text-gray-600">You have selected:</p>
             <strong className="text-lg text-blue-500">{selectedTime}</strong>
             <div>
-              <Button className="w-auto px-6 py-2 text-gray-700 hover:bg-gray-400 hover:text-white">
+              <Button
+                onClick={() => setModalOpen(true)}
+                className="w-auto px-6 py-2 text-gray-700 hover:bg-gray-400 hover:text-white"
+              >
                 Book appointment
               </Button>
             </div>
@@ -144,6 +172,16 @@ const BookOnline = () => {
           </button>
         </div>
       </div>
+
+      {/* Modal for booking the appointment */}
+      <ReviewBookingModal
+        modalOpen={modalOpen}
+        setModalOpen={setModalOpen}
+        selectedTime={selectedTime}
+        name={name}
+        setName={setName}
+        handleBookAppointment={handleBookAppointment}
+      />
     </div>
   );
 };
