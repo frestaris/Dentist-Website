@@ -78,16 +78,21 @@ const Reviews = () => {
       </div>
 
       {/* Slider */}
-      <div className="my-8 h-[200px]">
+      <div className="my-8">
         <Slider {...settings}>
           {reviews.map((review, index) => (
-            <div key={review.id || index}>
+            <div
+              key={review.id || index}
+              className="flex flex-col items-center"
+            >
               <div className="text-center mt-8">
                 <p className="text-lg text-gray-600 font-semibold">
-                  - {review.author}
+                  -{" "}
+                  {review.author.charAt(0).toUpperCase() +
+                    review.author.slice(1)}
                 </p>
                 <p className="text-xl text-gray-800 italic my-4">
-                  "{review.text}"
+                  "{review.text.charAt(0).toUpperCase() + review.text.slice(1)}"
                 </p>
                 <RatingStars rating={review.rating} />
               </div>

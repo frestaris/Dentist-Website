@@ -25,6 +25,16 @@ const ReviewModal = ({ setReviews, closeModal }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (formData.text && formData.author && formData.rating > 0) {
+      if (formData.author.length < 3) {
+        setErrorMessage("Name must be at least 3 characters long.");
+        return;
+      }
+
+      if (formData.text.length < 10) {
+        setErrorMessage("Review must be at least 10 characters long.");
+        return;
+      }
+
       try {
         const response = await fetch(
           "http://localhost:5000/review/add-review",
@@ -94,7 +104,7 @@ const ReviewModal = ({ setReviews, closeModal }) => {
           ))}
         </div>
         {ratingError && (
-          <p className="text-red-500 text-xs mt-2">Please select a rating.</p>
+          <p className="text-red-500 text-sm mt-2">Please select a rating.</p>
         )}
       </div>
       <label htmlFor="text" className="block text-sm font-medium mb-2">
@@ -109,11 +119,9 @@ const ReviewModal = ({ setReviews, closeModal }) => {
         className="w-full p-2 border rounded"
         required
       />
-
       {errorMessage && (
-        <p className="text-red-500 text-xs mt-2">{errorMessage}</p>
+        <p className="text-red-500 text-sm mt-2">{errorMessage}</p>
       )}
-
       <Button
         type="submit"
         className="text-gray-700 hover:bg-gray-400 hover:text-white"
