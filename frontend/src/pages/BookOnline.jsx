@@ -112,7 +112,7 @@ const BookOnline = () => {
                 })}, ${date.toLocaleDateString("en-US", { weekday: "short" })}`}
               </span>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4 mt-4">
+            <div className="flex flex-wrap gap-4 mt-4">
               {timeSlots.map((time, timeIndex) => {
                 const formattedTime = `${date.toLocaleDateString("en-US", {
                   weekday: "short",
@@ -123,7 +123,7 @@ const BookOnline = () => {
                 return (
                   <button
                     key={timeIndex}
-                    className={`w-full py-2 text-sm font-medium border rounded-md transition duration-200 ${
+                    className={`w-[65px] py-2 text-sm font-medium border rounded-md transition duration-200 ${
                       selectedTime === formattedTime
                         ? "bg-primary text-white scale-110 border-primary"
                         : "bg-white text-gray-700 border-gray-300 hover:bg-blue-50 hover:border-primary hover:text-primary hover:scale-110"
