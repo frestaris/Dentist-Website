@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "../components/Button";
 import { FaStar } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const ReviewModal = ({ setReviews, closeModal }) => {
   const [formData, setFormData] = useState({
@@ -9,6 +10,7 @@ const ReviewModal = ({ setReviews, closeModal }) => {
     rating: 0,
   });
   const [ratingError, setRatingError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -20,15 +22,39 @@ const ReviewModal = ({ setReviews, closeModal }) => {
     setRatingError(false);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (formData.text && formData.author && formData.rating > 0) {
-      const newReview = {
-        id: Date.now(),
-        ...formData,
-      };
-      setReviews((prevReviews) => [newReview, ...prevReviews]);
-      closeModal();
+      try {
+        const response = await fetch(
+          "http://localhost:5000/review/add-review",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("Error submitting review");
+        }
+
+        const newReview = await response.json();
+
+        setReviews((prevReviews) => [newReview, ...prevReviews]);
+        closeModal();
+        Swal.fire({
+          icon: "success",
+          title: "Review added Successfully!",
+          timer: 1000,
+          timerProgressBar: false,
+          showConfirmButton: false,
+        });
+      } catch (error) {
+        setErrorMessage("Failed to submit review. Please try again.", error);
+      }
     } else {
       if (formData.rating === 0) {
         setRatingError(true);
@@ -83,6 +109,11 @@ const ReviewModal = ({ setReviews, closeModal }) => {
         className="w-full p-2 border rounded"
         required
       />
+
+      {errorMessage && (
+        <p className="text-red-500 text-xs mt-2">{errorMessage}</p>
+      )}
+
       <Button
         type="submit"
         className="text-gray-700 hover:bg-gray-400 hover:text-white"
