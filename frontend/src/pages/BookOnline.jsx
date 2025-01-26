@@ -270,7 +270,7 @@ const BookOnline = () => {
                         }
                         disabled={slot.isBooked}
                       >
-                        {slot.time}
+                        {slot.isBooked ? "Booked" : slot.time}
                       </button>
                     );
                   })
