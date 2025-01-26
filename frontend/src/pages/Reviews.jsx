@@ -5,11 +5,12 @@ import "slick-carousel/slick/slick-theme.css";
 import RatingStars from "../components/RatingStars";
 import Button from "../components/Button";
 import ReviewModal from "../components/ReviewModal";
+import { PulseLoader } from "react-spinners";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const [loading, setLoading] = useState(true);
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -35,8 +36,10 @@ const Reviews = () => {
         );
         const data = await response.json();
         setReviews(data);
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching reviews:", error);
+        setLoading(false);
       }
     };
 
@@ -79,27 +82,35 @@ const Reviews = () => {
 
       {/* Slider */}
       <div className="my-8">
-        <Slider {...settings}>
-          {reviews.map((review, index) => (
-            <div
-              key={review.id || index}
-              className="flex flex-col items-center"
-            >
-              <div className="text-center mt-8">
-                <p className="text-lg text-gray-600 font-semibold">
-                  -{" "}
-                  {review.author.charAt(0).toUpperCase() +
-                    review.author.slice(1)}
-                </p>
-                <p className="text-xl text-gray-800 italic my-4">
-                  "{review.text.charAt(0).toUpperCase() + review.text.slice(1)}"
-                </p>
-                <RatingStars rating={review.rating} />
+        {loading ? (
+          <div className="flex justify-center items-center">
+            <PulseLoader size={10} color="#81d0ea" margin={4} />
+          </div>
+        ) : (
+          <Slider {...settings}>
+            {reviews.map((review, index) => (
+              <div
+                key={review.id || index}
+                className="flex flex-col items-center"
+              >
+                <div className="text-center mt-8">
+                  <p className="text-lg text-gray-600 font-semibold">
+                    -{" "}
+                    {review.author.charAt(0).toUpperCase() +
+                      review.author.slice(1)}
+                  </p>
+                  <p className="text-xl text-gray-800 italic my-4">
+                    "
+                    {review.text.charAt(0).toUpperCase() + review.text.slice(1)}
+                    "
+                  </p>
+                  <RatingStars rating={review.rating} />
+                </div>
+                <hr className="w-2/4 mx-auto border-t-2 mt-8 border-gray-300" />
               </div>
-              <hr className="w-2/4 mx-auto border-t-2 mt-8 border-gray-300" />
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </Slider>
+        )}
       </div>
 
       {/* Modal */}
@@ -117,7 +128,7 @@ const Reviews = () => {
                 Leave a Review
               </h2>
               <button
-                className=" text-gray-600 font-semibold hover:text-primary"
+                className="text-gray-600 font-semibold hover:text-primary"
                 onClick={closeModal}
               >
                 ✕

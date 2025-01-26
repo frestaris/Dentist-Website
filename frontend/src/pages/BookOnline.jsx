@@ -5,6 +5,7 @@ import Button from "../components/Button";
 import ReviewBookingModal from "../components/ReviewBookingModal";
 import Swal from "sweetalert2";
 import moment from "moment";
+import { PulseLoader } from "react-spinners";
 
 const BookOnline = () => {
   const [selectedTime, setSelectedTime] = useState(null);
@@ -184,7 +185,7 @@ const BookOnline = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row justify-between w-full my-8 p-6 border border-gray-300 rounded-lg bg-gray-50">
+    <div className="flex flex-col md:flex-row justify-between w-full mb-8 p-6 bg-gray-50">
       {/* Left side: Calendar */}
       <div className="md:w-1/3 w-full text-center">
         <Calendar
@@ -246,7 +247,7 @@ const BookOnline = () => {
               </div>
               <div className="flex flex-wrap gap-4 mt-4">
                 {loading ? (
-                  <p>Loading time slots...</p>
+                  <PulseLoader size={10} color="#81d0ea" margin={4} />
                 ) : (
                   availableSlots.map((slot, timeIndex) => {
                     const formattedTime = `${date.toLocaleDateString("en-US", {
