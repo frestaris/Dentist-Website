@@ -32,3 +32,11 @@ export const getDates = (startDate, numberOfDays) => {
 
   return dates;
 };
+
+export const adjustForWeekends = (date) => {
+  const newDate = new Date(date);
+  while (newDate.getDay() === 6 || newDate.getDay() === 0) {
+    newDate.setDate(newDate.getDate() + 1);
+  }
+  return newDate;
+};

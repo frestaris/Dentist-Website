@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getDates, adjustForWeekends } from "../utils/functions";
+// import { RiArrowDownSLine } from "react-icons/ri";
 import Calendar from "react-calendar";
 import Button from "../components/Button";
 import ReviewBookingModal from "../components/ReviewBookingModal";
@@ -78,6 +79,10 @@ const BookOnline = () => {
       setSelectedTime(formattedTime);
     }
   };
+
+  // const loadMoreDates = () => {
+  //   setVisibleDates((prevCount) => prevCount + 3);
+  // };
 
   const handleDateChange = (newDate) => {
     setSelectedDate(newDate);
@@ -279,6 +284,12 @@ const BookOnline = () => {
             </div>
           );
         })}
+
+        {/* <div className="flex justify-center items-center mt-8 font-bold text-primary">
+          <button onClick={loadMoreDates} className="flex items-center">
+            More <RiArrowDownSLine className="ml-2 text-2xl" />
+          </button>
+        </div> */}
       </div>
 
       {/* Modal for booking the appointment */}
