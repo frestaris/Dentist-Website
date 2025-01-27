@@ -6,6 +6,7 @@ import ReviewBookingModal from "../components/ReviewBookingModal";
 import Swal from "sweetalert2";
 import moment from "moment";
 import { PulseLoader } from "react-spinners";
+import { baseURL } from "../utils/baseUrl";
 
 const BookOnline = () => {
   const [selectedTime, setSelectedTime] = useState(null);
@@ -32,7 +33,7 @@ const BookOnline = () => {
 
         try {
           const response = await fetch(
-            `http://localhost:5000/booking/bookings/${formattedDate}`
+            `${baseURL}booking/bookings/${formattedDate}`
           );
           const data = await response.json();
 
@@ -136,16 +137,13 @@ const BookOnline = () => {
     };
 
     try {
-      const response = await fetch(
-        "http://localhost:5000/booking/add-booking",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(bookingData),
-        }
-      );
+      const response = await fetch(`${baseURL}booking/add-booking`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bookingData),
+      });
 
       if (!response.ok) {
         throw new Error("Failed to book the appointment.");

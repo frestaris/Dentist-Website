@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "../components/Button";
 import Swal from "sweetalert2";
+import { baseURL } from "../utils/baseUrl";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -20,7 +21,7 @@ const ContactUs = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const missingFields = [];
 
@@ -40,27 +41,54 @@ const ContactUs = () => {
       });
       return;
     }
+    try {
+      const response = await fetch(`${baseURL}inquiry/add-inquiry`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    Swal.fire({
-      icon: "success",
-      title: "Form Submitted Successfully!",
-      text: "We will get back to you soon.",
-      confirmButtonText: "Okay",
-      timer: 5000,
-      timerProgressBar: false,
-    });
+      const result = await response.json();
+      if (response.ok) {
+        Swal.fire({
+          icon: "success",
+          title: "Form Submitted Successfully!",
+          text: "We will get back to you soon.",
+          confirmButtonText: "Okay",
+          timer: 5000,
+          timerProgressBar: false,
+        });
 
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      preferredContact: "",
-      patientStatus: "",
-      provider: "",
-      message: "",
-      referral: "",
-    });
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          preferredContact: "",
+          patientStatus: "",
+          provider: "",
+          message: "",
+          referral: "",
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: result.error || "There was an error submitting your form.",
+          confirmButtonText: "Okay",
+        });
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "There was an error submitting your form. Please try again later.",
+        confirmButtonText: "Okay",
+      });
+    }
   };
 
   return (
@@ -139,7 +167,13 @@ const ContactUs = () => {
                   id="phone"
                   name="phone"
                   value={formData.phone}
-                  onChange={handleChange}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    // Allow only digits
+                    if (/^\d*$/.test(value)) {
+                      handleChange(e); // Call the handler only if the value is valid
+                    }
+                  }}
                   required
                   className="w-full p-4 mt-2 border"
                 />
@@ -240,9 +274,9 @@ const ContactUs = () => {
                 className="w-full p-4 mt-2 border mb-8"
               >
                 <option value="">Select an option</option>
-                <option value="provider1">Dr. John Doe</option>
-                <option value="provider2">Dr. Jane Smith</option>
-                <option value="provider3">Dr. Alice Johnson</option>
+                <option value="Dr. John Doe">Dr. John Doe</option>
+                <option value="Dr. Jane Smith">Dr. Jane Smith</option>
+                <option value="Dr. Alice Johnson">Dr. Alice Johnson</option>
               </select>
             </div>
             <hr />

@@ -55,9 +55,11 @@ const Overview = () => {
           Our team of experienced oral care providers prioritizes your health at
           every step.
         </h1>
-        <Button className="w-auto px-6 py-2 text-gray-700 hover:bg-gray-400 hover:text-white">
-          <Link to="/contact-us">Get started</Link>
-        </Button>
+        <Link to="/contact-us">
+          <Button className="w-auto px-6 py-2 text-gray-700 hover:bg-gray-400 hover:text-white">
+            Get started
+          </Button>
+        </Link>
       </div>
     </div>
   );

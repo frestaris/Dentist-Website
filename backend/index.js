@@ -5,6 +5,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import userReview from "./routes/review.route.js";
 import userBooking from "./routes/booking.route.js";
+import Inquiry from "./routes/inquiry.route.js";
 
 dotenv.config();
 
@@ -34,6 +35,7 @@ app.use(
 // Routes
 app.use("/review", userReview);
 app.use("/booking", userBooking);
+app.use("/inquiry", Inquiry);
 
 // Start Server
 const PORT = process.env.PORT || 5000;
