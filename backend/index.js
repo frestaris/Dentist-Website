@@ -27,7 +27,7 @@ mongoose
 // CORS Configuration
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://dentist-website-frontend.vercel.app",
     credentials: true,
   })
 );
