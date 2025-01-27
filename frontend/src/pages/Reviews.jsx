@@ -6,6 +6,7 @@ import RatingStars from "../components/RatingStars";
 import Button from "../components/Button";
 import ReviewModal from "../components/ReviewModal";
 import { PulseLoader } from "react-spinners";
+import { baseURL } from "../utils/baseUrl";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -31,9 +32,7 @@ const Reviews = () => {
   useEffect(() => {
     const getReviews = async () => {
       try {
-        const response = await fetch(
-          "http://localhost:5000/review/get-reviews"
-        );
+        const response = await fetch(`${baseURL}review/get-reviews`);
         const data = await response.json();
         setReviews(data);
         setLoading(false);
