@@ -48,7 +48,7 @@ const Navbar = () => {
               our team
             </div>
             {/* Dropdown Content */}
-            <div className="absolute left-0 hidden group-hover:block bg-gray-100 shadow-lg p-4 w-40">
+            <div className="absolute left-0 hidden group-hover:block bg-gray-100 shadow-lg p-4 w-40 z-20">
               <ul>
                 <li>
                   <NavLink
@@ -111,7 +111,7 @@ const Navbar = () => {
               about us
             </div>
             {/* Dropdown Content */}
-            <div className="absolute right-0 hidden group-hover:block bg-gray-100 shadow-lg p-4 w-36">
+            <div className="absolute right-0 hidden group-hover:block bg-gray-100 shadow-lg p-4 w-36 z-20">
               <ul>
                 <li>
                   <NavLink
@@ -172,7 +172,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Sliding Menu */}
+      {/* Mobile Menu */}
       <div
         className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform ${
           isOpen ? "translate-x-0" : "translate-x-full"
