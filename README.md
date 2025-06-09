@@ -2,9 +2,11 @@
 
 A modern and responsive **Dentist Website** built with React. Users can explore services, **book appointments online**, **leave reviews**, and **contact the clinic**—all in one seamless interface.
 
-![Home Page](src/assets/screenshots/Home-Hero.png)
+![Home Page](https://github.com/frestaris/Dentist-Website/raw/main/frontend/src/assets/screenshots/Home-Hero.png)
 
-[Live Demo](https://dentist-website-frontend.vercel.app/)
+<p align="center">
+  🔗 <strong><a href="https://dentist-website-frontend.vercel.app/">Live Demo</a></strong>
+</p>
 
 ---
 
@@ -22,6 +24,7 @@ A modern and responsive **Dentist Website** built with React. Users can explore 
 ## Tech Stack
 
 - **Frontend:** React, React Router
+- **Backend:** Node.js, Express.js, MongoDB
 - **Styling:** CSS3, Flexbox, Media Queries, Tailwind
 - **Deployment:** Vercel
 
@@ -31,45 +34,45 @@ A modern and responsive **Dentist Website** built with React. Users can explore 
 
 ### Home Page
 
-![Home Page](src/assets/screenshots/HomePage.png)
+![Home Page](https://github.com/frestaris/Dentist-Website/raw/main/frontend/src/assets/screenshots/HomePage.png)
 
 ### Book Online
 
 Book your appointment in just a few clicks.  
-![Booking](src/assets/screenshots/Booking-1.png)
-![Booking](src/assets/screenshots/Booking-2.png)
-![Booking](src/assets/screenshots/Booking-3.png)
+![Booking](https://github.com/frestaris/Dentist-Website/raw/main/frontend/src/assets/screenshots/Booking-1.png)
+![Booking](https://github.com/frestaris/Dentist-Website/raw/main/frontend/src/assets/screenshots/Booking-2.png)
+![Booking](https://github.com/frestaris/Dentist-Website/raw/main/frontend/src/assets/screenshots/Booking-3.png)
 
 ### Contact Us
 
 Get in touch easily with a name, email, and message.  
-![Contact Us](src/assets/screenshots/ContactUs.png)
+![Contact Us](https://github.com/frestaris/Dentist-Website/raw/main/frontend/src/assets/screenshots/ContactUs.png)
 
 ### FAQ
 
 Find answers to the most common questions.  
-![FAQ](src/assets/screenshots/FAQ.png)
+![FAQ](https://github.com/frestaris/Dentist-Website/raw/main/frontend/src/assets/screenshots/FAQ.png)
 
 ### Office Tour
 
 Preview the clinic environment before your visit.  
-![Office Tour](src/assets/screenshots/OfficeTour.png)
+![Office Tour](https://github.com/frestaris/Dentist-Website/raw/main/frontend/src/assets/screenshots/OfficeTour.png)
 
 ### Our Team
 
 Meet our experienced and friendly dental professionals.  
-![Our Team](src/assets/screenshots/OurTeam.png)
+![Our Team](https://github.com/frestaris/Dentist-Website/raw/main/frontend/src/assets/screenshots/OurTeam.png)
 
 ### Review
 
 Leave a review and see what others are saying — instantly.  
-![Review](src/assets/screenshots/Review-1.png)
-![Review](src/assets/screenshots/Review-2.png)
+![Review](https://github.com/frestaris/Dentist-Website/raw/main/frontend/src/assets/screenshots/Review-1.png)
+![Review](https://github.com/frestaris/Dentist-Website/raw/main/frontend/src/assets/screenshots/Review-2.png)
 
 ### Safety
 
 Understand the safety protocols and hygiene practices in place.  
-![Safety](src/assets/screenshots/Safety.png)
+![Safety](https://github.com/frestaris/Dentist-Website/raw/main/frontend/src/assets/screenshots/Safety.png)
 
 ---
 
