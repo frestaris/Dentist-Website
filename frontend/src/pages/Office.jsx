@@ -1,3 +1,5 @@
+import dentstistImage from "../assets/dentists-hero-picture.jpg";
+
 const Office = () => {
   return (
     <div className="mx-auto max-w-6xl">
@@ -80,7 +82,7 @@ const Office = () => {
         <div className="md:col-span-3 col-span-1 md:h-[23rem] bg-gray-400 rounded-[2.5rem]">
           <img
             src="https://i.homeadore.com/wp-content/uploads/2024/06/dermatology-medical-center-in-ljubljana-by-studio-360-004-460x314.jpg"
-            alt="picture1"
+            alt="picture2"
             className="w-full h-full object-cover rounded-[2.5rem]"
           />
         </div>
@@ -89,7 +91,7 @@ const Office = () => {
         <div className="md:col-span-4 col-span-1 md:h-[23rem] bg-gray-500 rounded-[2.5rem]">
           <img
             src="https://www.the-dentist.co.uk/media/snznvdd4/university-invests-32-million-to-create-a-state-of-the-art-dental-clinic-the-dentist.jpg?width=1002&height=564&bgcolor=White&v=1da584637c9ad90"
-            alt="picture1"
+            alt="picture3"
             className="w-full h-full object-cover rounded-[2.5rem]"
           />
         </div>
@@ -98,15 +100,15 @@ const Office = () => {
           <div className=" md:h-[11rem] bg-gray-600 rounded-[2.5rem]">
             <img
               src="https://media.istockphoto.com/id/183405222/photo/office-building.jpg?s=612x612&w=0&k=20&c=CCEZwDEunJf9nPftUspeJJgMK7JNIqBYEBbtfpqJeFE="
-              alt="picture1"
+              alt="picture4"
               className="w-full h-full object-cover rounded-[2.5rem]"
             />
           </div>
           {/* PICTURE 5 */}
           <div className=" md:h-[11rem] bg-gray-700 rounded-[2.5rem]">
             <img
-              src="https://www.goldcoastdentalstudio.com.au/wp-content/uploads/2020/11/EMD_8731-scaled.jpg"
-              alt="picture1"
+              src={dentstistImage}
+              alt="picture5"
               className="w-full h-full object-cover rounded-[2.5rem]"
             />
           </div>
@@ -116,7 +118,7 @@ const Office = () => {
         <div className="md:col-span-3 col-span-1 md:h-[23rem] bg-gray-800 rounded-[2.5rem]">
           <img
             src="https://i.pinimg.com/736x/9f/f7/d1/9ff7d1a690e7bf508eda106f9bc13dab.jpg"
-            alt="picture1"
+            alt="picture6"
             className="w-full h-full object-cover rounded-[2.5rem]"
           />
         </div>
@@ -124,7 +126,7 @@ const Office = () => {
         <div className="md:col-span-3 col-span-1 md:h-[23rem] bg-gray-900 rounded-[2.5rem]">
           <img
             src="https://t4.ftcdn.net/jpg/04/45/72/21/360_F_445722151_OqUvUDOnmuxqRwtP7NB0xRH0bQqhvCz8.jpg"
-            alt="picture1"
+            alt="picture7"
             className="w-full h-full object-cover rounded-[2.5rem]"
           />
         </div>

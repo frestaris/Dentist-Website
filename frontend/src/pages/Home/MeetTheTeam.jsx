@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Button from "../../components/Button";
-
+import meetTheTeamImage from "../../assets/meet-the-team.jpg";
 const MeetTheTeam = () => {
   return (
     <div className="overflow-hidden px-4">
@@ -8,8 +8,7 @@ const MeetTheTeam = () => {
         <div
           className="absolute top-0 left-0 right-0 bottom-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url('https://www.sgu.edu/wp-content/uploads/2020/11/GradCollage_845x500.jpg')",
+            backgroundImage: `url(${meetTheTeamImage})`,
 
             backgroundAttachment: "fixed",
             filter: "brightness(70%)",

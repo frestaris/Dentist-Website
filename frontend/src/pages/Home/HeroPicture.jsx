@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Button from "../../components/Button";
-
+import dentstistImage from "../../assets/dentists-hero-picture.jpg";
 const HeroPicture = () => {
   return (
     <div className="overflow-hidden px-4">
@@ -8,8 +8,7 @@ const HeroPicture = () => {
         <div
           className="absolute top-0 left-0 right-0 bottom-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url('https://www.goldcoastdentalstudio.com.au/wp-content/uploads/2020/11/EMD_8731-scaled.jpg')",
+            backgroundImage: `url(${dentstistImage})`,
             backgroundAttachment: "fixed",
             filter: "brightness(70%)",
             zIndex: -1,
